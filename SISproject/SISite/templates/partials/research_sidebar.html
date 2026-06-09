@@ -1,0 +1,11 @@
+<aside class="sidebar">
+    <h3>Research</h3>
+    <ul>
+        <li {% if active_page == 'research' %}class="active"{% endif %}>
+            <a href="{% url 'research' %}">Overview</a>
+        </li>
+        <li {% if active_page == 'agendas' %}class="active"{% endif %}>
+            <a href="{% url 'agendas' %}">Research Agendas</a>
+        </li>
+    </ul>
+</aside>

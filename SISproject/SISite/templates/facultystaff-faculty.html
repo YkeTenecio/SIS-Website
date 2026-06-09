@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/facultystaff.css' %}">
+{% endblock %}
+
+{% with active_section='faculty' active_page='faculty' %}
+
+{% block content %}
+<section class="facultystaff-page">
+    <h1>Faculty</h1>
+    <div class="facultystaff-layout sidebar-layout">
+
+        {% include 'partials/faculty_sidebar.html' %}
+
+        <article class="facultystaff-content content-area">
+            <div class="overview">
+                <h2>Our Faculty</h2>
+                <p>The School of Interdisciplinary Studies faculty members are experts in their respective fields, coming from various departments across MSU-IIT.</p>
+            </div>
+
+            <div class="faculty-search-bar">
+                <input type="text" id="facultySearch" placeholder="Search by name or department...">
+            </div>
+
+            <div class="images" id="facultyGrid">
+                {% for facul in facul %}
+                <div class="faculty-card"
+                     data-name="{{ facul.name }}"
+                     data-department="{{ facul.get_department_display|lower }}">
+                    <img src="{{ facul.image_url }}" alt="{{ facul.name }}">
+                    <p>{{ facul.name }}</p>
+                </div>
+                {% empty %}
+                <h4>No Faculties Found</h4>
+                {% endfor %}
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/facultystaff.js' %}"></script>
+{% endblock %}

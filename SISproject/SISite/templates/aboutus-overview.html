@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% with active_section='about' active_page='about-overview' %}
+
+{% block content %}
+<section class="about-page">
+    <h1>About the School of Interdisciplinary Studies</h1>
+    <div class="about-layout sidebar-layout">
+
+        {% include 'partials/about_sidebar.html' %}
+
+        <article class="about-content content-area">
+            <h2>Overview</h2>
+            <p>The School of Interdisciplinary Studies (SIS) at MSU-IIT serves as a hub for integrated education in sustainability, environmental science, and data science.</p>
+            <p>These programs prepare students to become sustainability experts, environmental stewards, and data innovators.</p>
+
+            <h3>Core Programs</h3>
+            <p>SIS anchors its offerings on these foundational areas:</p>
+            <ul>
+                <li><a href="{% url 'programssds' %}">Sustainable Development Studies</a></li>
+                <li><a href="{% url 'programsenvi' %}">Environmental Science</a></li>
+                <li><a href="{% url 'programsds' %}">Data Science</a></li>
+            </ul>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

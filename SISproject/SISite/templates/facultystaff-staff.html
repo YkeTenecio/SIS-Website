@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/facultystaff.css' %}">
+{% endblock %}
+
+{% with active_section='faculty' active_page='staff' %}
+
+{% block content %}
+<section class="facultystaff-page">
+    <h1>Staff</h1>
+    <div class="facultystaff-layout sidebar-layout">
+
+        {% include 'partials/faculty_sidebar.html' %}
+
+        <article class="facultystaff-content content-area">
+            <div class="overview">
+                <h2>Our Staff</h2>
+                <p>The School of Interdisciplinary Studies staff provides administrative and support services to ensure the smooth operation of the school.</p>
+            </div>
+
+            <div class="faculty-search-bar">
+                <input type="text" id="staffSearch" placeholder="Search by name or department...">
+            </div>
+
+            <div class="images" id="staffGrid">
+                {% for staff in staff %}
+                <div class="faculty-card"
+                     data-name="{{ staff.name }}"
+                     data-department="{{ staff.get_department_display|lower }}">
+                    <img src="{{ staff.image_url }}" alt="{{ staff.name }}">
+                    <p>{{ staff.name }}</p>
+                </div>
+                {% empty %}
+                <h4>No Staff Found</h4>
+                {% endfor %}
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/facultystaff.js' %}"></script>
+{% endblock %}

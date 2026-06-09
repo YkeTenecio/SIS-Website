@@ -1,0 +1,69 @@
+{% load static %}
+<nav class="menu-bar">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul>
+        <li {% if active_section == 'about' %}class="active"{% endif %}>
+            <a href="{% url 'about-overview' %}">About us</a>
+            <ul>
+                <li {% if active_page == 'about-overview' %}class="active"{% endif %}>
+                    <a href="{% url 'about-overview' %}">Overview</a>
+                </li>
+                <li {% if active_page == 'about-history' %}class="active"{% endif %}>
+                    <a href="{% url 'about-history' %}">Brief History</a>
+                </li>
+                <li {% if active_page == 'about-vismiss' %}class="active"{% endif %}>
+                    <a href="{% url 'about-vismiss' %}">Vision & Mission</a>
+                </li>
+                <li {% if active_page == 'about-dean' %}class="active"{% endif %}>
+                    <a href="{% url 'about-dean' %}">Office of the Dean</a>
+                </li>
+            </ul>
+        </li>
+
+        <li {% if active_section == 'programs' %}class="active"{% endif %}>
+            <a href="{% url 'programs' %}">Programs</a>
+            <ul>
+                <li {% if active_page == 'programsenvi' %}class="active"{% endif %}>
+                    <a href="{% url 'programsenvi' %}">Department of Environmental Science</a>
+                </li>
+                <li {% if active_page == 'programssds' %}class="active"{% endif %}>
+                    <a href="{% url 'programssds' %}">Sustainable Development Studies</a>
+                </li>
+                <li {% if active_page == 'programsds' %}class="active"{% endif %}>
+                    <a href="{% url 'programsds' %}">Data Science Program</a>
+                </li>
+            </ul>
+        </li>
+
+        <li {% if active_section == 'students' %}class="active"{% endif %}>
+            <a href="{% url 'students' %}">Students</a>
+        </li>
+
+        <li {% if active_section == 'faculty' %}class="active"{% endif %}>
+            <a href="{% url 'facultyhome' %}">Faculty &amp; Staff</a>
+            <ul>
+                <li {% if active_page == 'faculty' %}class="active"{% endif %}>
+                    <a href="{% url 'faculty' %}">Faculty</a>
+                </li>
+                <li {% if active_page == 'affil' %}class="active"{% endif %}>
+                    <a href="{% url 'affil' %}">Faculty Affiliates</a>
+                </li>
+                <li {% if active_page == 'staff' %}class="active"{% endif %}>
+                    <a href="{% url 'staff' %}">Staff</a>
+                </li>
+            </ul>
+        </li>
+
+        <li {% if active_section == 'research' %}class="active"{% endif %}>
+            <a href="{% url 'research' %}">Research</a>
+        </li>
+
+        <li {% if active_section == 'resources' %}class="active"{% endif %}>
+            <a href="{% url 'resources' %}">Resources</a>
+        </li>
+    </ul>
+</nav>

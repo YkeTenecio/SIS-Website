@@ -1,0 +1,83 @@
+{# Include this partial inside a .programs-list div.                        #}
+{# Required context vars: fyfs, fyss, fys, syfs, syss, m, download_url     #}
+
+<div class="year-sem">
+    <h3>First Year | First Semester</h3>
+    <ul>
+        {% for subject in fyfs %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="year-sem">
+    <h3>First Year | Second Semester</h3>
+    <ul>
+        {% for subject in fyss %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="year-sem">
+    <h3>First Year | Summer</h3>
+    <ul>
+        {% for subject in fys %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="year-sem">
+    <h3>Second Year | First Semester</h3>
+    <ul>
+        {% for subject in syfs %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="year-sem">
+    <h3>Second Year | Second Semester</h3>
+    <ul>
+        {% for subject in syss %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="year-sem">
+    <h3>Second Year | Summer</h3>
+    <ul>
+        {% for subject in sys %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="year-sem">
+    <h3>Major Subjects (Electives)</h3>
+    <ul>
+        {% for subject in m %}
+        <li>{{ subject.subject }}</li>
+        {% empty %}
+        <li>No Subject Available</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="download-link">
+    <p>Download Program of the Study <a href="{{ download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+</div>

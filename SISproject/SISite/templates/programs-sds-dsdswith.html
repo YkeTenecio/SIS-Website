@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='dsdsw' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Doctor in Sustainable Development Studies (with bridging)</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/sds_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="programs-list">
+                {% include 'partials/sds_curriculum_tracks.html' %}
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% with active_section='about' active_page='about-dean' %}
+
+{% block content %}
+<section class="office-of-dean">
+    <h1>About the School of Interdisciplinary Studies</h1>
+    <div class="office-layout sidebar-layout">
+
+        {% include 'partials/about_sidebar.html' %}
+
+        <article class="office-content content-area">
+
+            <div class="office-profile dean-message">
+                {% for dean in deans %}
+                <img src="{{ dean.image_url }}" alt="{{ dean.name }}">
+                <div>
+                    <h3>{{ dean.name }}, {{dean.title}}</h3>
+                    <p>Dean</p>
+                    <a href="mailto:{{ facul.email }}">{{ facul.email }}</a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h2>Office of the Dean</h2>
+            <table class="office-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dean in deans %}
+                    <tr>
+                        <td>{{ dean.get_position_display }}</td>
+                        <td>{{dean.rank}} {{ dean.name }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% for asst in asstdean %}
+                    <tr>
+                        <td>{{ asst.get_position_display }}</td>
+                        <td>{{ asst.rank }} {{asst.name}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h2>Department Chairpersons</h2>
+            <table class="office-table">
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for chair in chair %}
+                    <tr>
+                        <td>{{ chair.get_department_display }}</td>
+                        <td>{{ chair.rank }} {{chair.name}}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="2">No Chairpersons Found</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

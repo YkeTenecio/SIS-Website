@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='enviphd' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Doctor of Philosophy in Environmental Science</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/envi_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The Doctor of Philosophy in Environmental Science is an advanced research program designed to train scholars in ecosystem science, environmental economics, and rigorous experimental design, leading to independent, original contributions to environmental knowledge and practice. Early coursework develops a strong foundation in ecosystem structure and dynamics, tropical and aquatic ecosystems, and environmental and natural resource economics, alongside advanced experimental design and a seminar in environmental science. Students tailor their expertise through electives, progress through qualifying and comprehensive exams, and complete extended dissertation research culminating in a final defense addressing complex environmental problems.</p>
+            </div>
+
+            <div class="programs-list">
+                {% include 'partials/curriculum_semesters.html' %}
+            </div>
+            
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

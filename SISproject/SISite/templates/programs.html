@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Programs</h1>
+    <div class="programs-layout sidebar-layout">
+
+        <aside class="sidebar">
+            <ul>
+                <li><a href="{% url 'programsenvi' %}">Environmental Science</a></li>
+                <li><a href="{% url 'programssds' %}">Sustainable Development Studies</a></li>
+                <li><a href="{% url 'programsds' %}">Data Science Program</a></li>
+            </ul>
+        </aside>
+
+        <article class="programs-content content-area">
+
+            <div class="dean-message">
+                {% for dean in deans %}
+                <img src="{{ dean.image_url }}" alt="{{ dean.name }}">
+                <div>
+                    <h3>{{ dean.name }}, {{dean.title}}</h3>
+                    <p>Dean</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The college offers strong graduate and doctorate programs in Sustainable Development Studies, Environmental Science, and Data Science, dedicated to addressing complex global challenges through advanced scholarship and innovation. The college is committed to excellence in teaching, research, and community engagement at the postgraduate level, fostering interdisciplinary collaboration and leadership in sustainability and data-driven solutions. It aims to provide students with competitive and high-quality academic training and research opportunities that prepare them to become experts and leaders in policy, industry, and academia.</p>
+            </div>
+
+            <div class="programs-list">
+                <h2>Our Programs</h2>
+
+                <article class="program-item">
+                    <img src="{% static 'images/DESpr.png' %}" alt="Department of Environmental Science">
+                    <div>
+                        <h3><a href="{% url 'programsenvi' %}">Department of Environmental Science</a></h3>
+                        <p>This interdisciplinary field integrates biological, physical, and information sciences to investigate environmental systems and develop solutions to environmental challenges. Students gain a comprehensive understanding of ecosystems, waste management, pollution, natural resource management, and the impact of climate change. Graduates are poised to excel in government, industry, or academia, where they can contribute to policy development, conservation, and environmental consultation.</p>
+                    </div>
+                </article>
+
+                <article class="program-item">
+                    <img src="{% static 'images/SDS.png' %}" alt="Sustainable Development Studies">
+                    <div>
+                        <h3><a href="{% url 'programssds' %}">Sustainable Development Studies</a></h3>
+                        <p>This program focuses on the development of eco-friendly growth strategies, examining how societies can foster economic progress while preserving the environment and promoting social justice. Students are exposed to renewable energy sources, sustainable agriculture practices, and policy frameworks that prioritize long-term ecological balance.</p>
+                    </div>
+                </article>
+
+                <article class="program-item">
+                    <img src="{% static 'images/MDSpr.png' %}" alt="Data Science Program">
+                    <div>
+                        <h3><a href="{% url 'programsds' %}">Data Science Program</a></h3>
+                        <p>This program blends statistical analysis, computer science, and domain-specific knowledge to equip students with the skills to interpret and extract insights from data. The demand for data scientists, analysts, and engineers is expected to surge. Graduates are well-positioned to work in fields such as healthcare, finance, and technology, leveraging data-driven decision-making and innovation.</p>
+                    </div>
+                </article>
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

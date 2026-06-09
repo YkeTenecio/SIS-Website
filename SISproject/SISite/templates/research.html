@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/research.css' %}">
+{% endblock %}
+
+{% with active_section='research' active_page='research' %}
+
+{% block content %}
+<section class="research-page">
+    <h1>Research</h1>
+    <div class="research-layout sidebar-layout">
+
+        {% include 'partials/research_sidebar.html' %}
+
+        <article class="research-content content-area">
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The School of Interdisciplinary Studies (SIS) research program at MSU-IIT emphasizes cutting-edge interdisciplinary inquiry targeting local and global challenges like climate change, disaster risk, biodiversity, peacebuilding, and sustainable resource management, aiming to produce innovative solutions that advance knowledge and societal progress.</p>
+                <p>Faculty and student efforts align with institutional, regional (DENR), and national (DOST) priorities, supported by external funding from partners like NORMECA, SEARCA, and Conservation International, plus access to ICT tools, statistical software, and university research guidelines.</p>
+                <p>Outputs include student theses, dissertations, and practical applications such as Environmental Impact Assessments (EIAs).</p>
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/research.js' %}"></script>
+{% endblock %}

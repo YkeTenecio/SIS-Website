@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/students.css' %}">
+{% endblock %}
+
+{% with active_section='students' %}
+
+{% block content %}
+<section class="students-page content-area">
+
+    <article class="students-content">
+        <div class="overview">
+            <h2>Overview</h2>
+            <p>The School of Interdisciplinary Studies (SIS) brings together a diverse group of students from various disciplines who are united by a shared commitment to sustainability, innovation, and evidence-based problem solving. Learners come from different academic backgrounds and professional sectors within and beyond MSU-IIT, creating a rich environment for peer learning, collaboration, and interdisciplinary dialogue.</p>
+            <p>Students are actively engaged in coursework, research, and extension activities that address real-world issues such as environmental management, sustainable development, data-driven policy, and community resilience. Their achievements include participation in funded research projects, contribution to environmental impact assessments and community-based initiatives, and involvement in student organizations that promote sustainability advocacy and interdisciplinary engagement.</p>
+            <p>SIS supports students through mentoring, flexible learning pathways, and access to cross-college electives that allow them to tailor studies to their interests and career goals.</p>
+        </div>
+    </article>
+
+    <h2>Students</h2>
+    <table class="org-table">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Alumni</h2>
+    <table class="org-table">
+        <thead>
+            <tr>
+                <p><a href="https://one.msuiit.edu.ph/alumni/tracer/" target="_blank" rel="noopener noreferrer">Alumni Tracer</a></p>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/students.js' %}"></script>
+{% endblock %}

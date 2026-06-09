@@ -1,0 +1,434 @@
+{# Shared SDS multi-track curriculum block.                                             #}
+{# Used by: programs-sds-msds, mssds, dsdswith/without, phdsdsw/without               #}
+{# Each track section renders its own semester groups and download link via context.    #}
+{# Track context vars follow pattern: comdev_fyfs, econdev_fyss, envied_fys, etc.      #}
+
+{% load static %}
+
+{% for track_name, track_var, track_label in tracks_meta %}
+{% comment %}This template uses the same year-sem styling as curriculum_semesters.html{% endcomment %}
+{% endfor %}
+
+{% comment %}---- COMMUNITY DEVELOPMENT ----{% endcomment %}
+<div class="ComDev">
+    <h3>Major in Community Development (ComDev)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in comdev_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in comdev_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in comdev_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in comdev_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in comdev_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in comdev_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ comdev_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>
+
+{% comment %}---- ECONOMIC DEVELOPMENT ----{% endcomment %}
+<div class="EconDev">
+    <h3>Major in Economic Development (EconDev)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in econdev_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in econdev_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in econdev_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in econdev_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in econdev_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in econdev_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ econdev_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>
+
+{% comment %}---- ENVIRONMENTAL EDUCATION ----{% endcomment %}
+<div class="EnviEd">
+    <h3>Major in Environmental Education (EnviEd)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in envied_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in envied_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in envied_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in envied_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in envied_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in envied_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ envied_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>
+
+{% comment %}---- ENVIRONMENTAL ENGINEERING ----{% endcomment %}
+<div class="EnviEngg">
+    <h3>Major in Environmental Engineering (EnviEng'g)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in enviengg_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in enviengg_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in enviengg_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in enviengg_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in enviengg_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in enviengg_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ enviengg_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>
+
+{% comment %}---- RESOURCE MANAGEMENT ----{% endcomment %}
+<div class="ResMgt">
+    <h3>Major in Resource Management (ResMgt)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in resmgt_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in resmgt_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in resmgt_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in resmgt_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in resmgt_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in resmgt_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ resmgt_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>
+
+{% comment %}---- RURAL AND URBAN PLANNING ----{% endcomment %}
+<div class="RUP">
+    <h3>Major in Rural and Urban Planning (RUP)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in rup_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in rup_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in rup_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in rup_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in rup_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in rup_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ rup_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>
+
+{% comment %}---- PEACE AND CONFLICT TRANSFORMATION ----{% endcomment %}
+<div class="PCT">
+    <h3>Major in Peace and Conflict Transformation (PCT)</h3>
+
+    <div class="year-sem">
+        <h4>First Year | First Semester</h4>
+        <ul>
+            {% for subject in pct_fyfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Second Semester</h4>
+        <ul>
+            {% for subject in pct_fyss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>First Year | Summer</h4>
+        <ul>
+            {% for subject in pct_fys %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | First Semester</h4>
+        <ul>
+            {% for subject in pct_syfs %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Second Year | Second Semester</h4>
+        <ul>
+            {% for subject in pct_syss %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>Note: With Comprehensive Exam</i>
+    </div>
+
+    <div class="year-sem">
+        <h3>Second Year | Summer</h3>
+        <ul>
+            {% for subject in sys %}
+            <li>{{ subject.subject }}</li>
+            {% empty %}
+            <li>No Subject Available</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="year-sem">
+        <h4>Major Subjects</h4>
+        <ul>
+            {% for subject in pct_m %}<li>{{ subject.subject }}</li>
+            {% empty %}<li>No Subject Available</li>{% endfor %}
+        </ul>
+        <i>*Cognate courses to be taken from the major courses of other specialization tracks.</i>
+    </div>
+
+    <div class="download-link">
+        <p>Download Program of the Study <a href="{{ pct_download_url }}" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<aside class="sidebar">
+    <ul>
+        <li {% if active_page == 'programssds' %}class="active"{% endif %}>
+            <a href="{% url 'programssds' %}">Overview</a>
+        </li>
+        <li {% if active_page == 'msds' %}class="active"{% endif %}>
+            <a href="{% url 'msds' %}">MSDS</a>
+        </li>
+        <li {% if active_page == 'mssds' %}class="active"{% endif %}>
+            <a href="{% url 'mssds' %}">MS SDS</a>
+        </li>
+        <li {% if active_page == 'dsdsw' %}class="active"{% endif %}>
+            <a href="{% url 'dsdsw' %}">DSDS (with bridging)</a>
+        </li>
+        <li {% if active_page == 'dsdswo' %}class="active"{% endif %}>
+            <a href="{% url 'dsdswo' %}">DSDS (without bridging)</a>
+        </li>
+        <li {% if active_page == 'phdsdsw' %}class="active"{% endif %}>
+            <a href="{% url 'phdsdsw' %}">PhD SDS (with bridging)</a>
+        </li>
+        <li {% if active_page == 'phdsdswo' %}class="active"{% endif %}>
+            <a href="{% url 'phdsdswo' %}">PhD SDS (without bridging)</a>
+        </li>
+    </ul>
+</aside>

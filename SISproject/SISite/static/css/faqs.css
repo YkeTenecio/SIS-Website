@@ -1,0 +1,14 @@
+/* ============================================================
+   FAQS.CSS — faqs.html
+   ============================================================ */
+
+.faqs-page > h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.faqs-content {
+  min-width: 0;
+}

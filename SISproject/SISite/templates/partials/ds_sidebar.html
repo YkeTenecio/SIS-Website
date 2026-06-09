@@ -1,0 +1,11 @@
+<aside class="sidebar">
+    <h3>Programs</h3>
+    <ul>
+        <li {% if active_page == 'programsds' %}class="active"{% endif %}>
+            <a href="{% url 'programsds' %}">Overview</a>
+        </li>
+        <li {% if active_page == 'mds' %}class="active"{% endif %}>
+            <a href="{% url 'mds' %}">MDS</a>
+        </li>
+    </ul>
+</aside>

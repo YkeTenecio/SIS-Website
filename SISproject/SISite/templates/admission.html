@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/admission.css' %}">
+{% endblock %}
+
+{% with active_section='admission' %}
+
+{% block content %}
+<section class="admission-page">
+    <h1>Application and Admission</h1>
+    <div class="admission-layout">
+
+        <article class="admission-content content-area">
+
+            <!-- ================================================
+                 MINIMUM REQUIREMENTS
+                 ================================================ -->
+            <div class="minimum-requirement">
+                <h3>Minimum Requirements</h3>
+                <ol>
+                    <li>A Bachelor's degree, or Master's degree, from a recognized institution is required for admission to a master's or doctoral program, respectively.</li>
+                    <li>For an applicant to a master's program or to a doctoral degree program, should have an undergraduate Grade-Point-Average (GPA) of 2.00 or better, and for an applicant to a doctoral program, a GPA of 1.75 or better in master's program; or some evidence of potential ability to pursue a graduate degree, e.g., excellent performance in teaching or research, etc.</li>
+                    <li>Evidence of suitable background or its equivalent in the field of study sought.</li>
+                </ol>
+                <p>The above criteria shall be enforced through (a) examination/evaluation of scholastic credentials, (b) recommendation from two former professors and/or distinguished authorities in the field/discipline sought, (c) character reference, (d) personal interview, (e) admission test, and (f) concept paper of the possible research topic or any appropriate means.</p>
+                <p>Applicants must submit all required credentials to the Program Coordinator/Adviser in the Department at least 2 weeks before enrollment. Credentials are evaluated by the Program Coordinator/Adviser and are endorsed to the college/center for further appraisal and approval.</p>
+            </div>
+
+            <!-- ================================================
+                 SDS APPLICATION
+                 ================================================ -->
+            <div class="sds-application">
+                <h3>Application for Sustainable Development Studies Program</h3>
+
+                <h4>Step 1: Submission of the Accomplished Forms to the SDS Program Coordinator</h4>
+                <ul>
+                    <li>2 copies – Application for Admission <a href="{% url 'resources' %}" target="_blank" rel="noopener noreferrer">(download here)</a></li>
+                    <li>Concept Paper <a href="{% url 'resources' %}" target="_blank" rel="noopener noreferrer">(download here)</a></li>
+                    <li>Personal Statement <a href="{% url 'resources' %}" target="_blank" rel="noopener noreferrer">(download here)</a></li>
+                    <li>2 Recommendation Letters <a href="{% url 'resources' %}" target="_blank" rel="noopener noreferrer">(download here)</a></li>
+                    <li>Transcript of Records (Original and Photocopy)</li>
+                    <li>Certificate of Overall GPA/GWA (Photocopy)</li>
+                    <li>Honorable Dismissal <em>(For non MSU-IIT applicants)</em></li>
+                    <li>Transfer Credentials <em>(For non MSU-IIT applicants)</em></li>
+                    <li>2x2 Picture (2)</li>
+                    <li>PSA Birth Certificate (Photocopy)</li>
+                    <li>Income Tax Return</li>
+                    <li>Long Brown Envelope (1)</li>
+                    <li>Long Green Expanded Envelope (1)</li>
+                    <li><em>if applicable:</em> Marriage Certificate for Female (Photocopy)</li>
+                </ul>
+
+                <p>Online Submission: Submit all accomplished forms and documents through <a href="https://forms.gle/TZZBM68eT4CeVD4W7" target="_blank" rel="noopener noreferrer">this link</a>.</p>
+                <p>Courier Submission: You may send your documents via courier (e.g. LBC) addressed to:</p>
+                <ul class="address-list">
+                    <li>Dr. Ernesto E. Empig</li>
+                    <li>SIS Office CASS Old Building, Ground Floor</li>
+                    <li>Mindanao State University – Iligan Institute of Technology</li>
+                    <li>Andres Bonifacio Avenue, Tibanga, Iligan City, 9200</li>
+                </ul>
+
+                <h4>Step 2: The Program Coordinator evaluates the application and interviews the applicant.</h4>
+                <h4>Step 3: The student receives a copy of the Notice of Admission.</h4>
+                <h4>Step 4: The student downloads, prints, and accomplishes the <a href="{% url 'resources' %}" target="_blank" rel="noopener noreferrer">payment slip for admission</a>, then proceeds to the Institute Cashier for payment.</h4>
+                <h4>Step 5: The student submits the required application documents to the Admissions and Registrar's Offices.</h4>
+                <h4>Step 6: The student proceeds to the Program Coordinator for enrollment.</h4>
+                <h4>Step 7: After receiving the Certificate of Registration (COR), the student proceeds to ICTC (Now CITC) at the CCS Building for school ID processing. The student also registers a MY.IIT account online by following the instructions indicated in the COR.</h4>
+
+                <p>In the case of a student seeking admission to the graduate program whose English proficiency is low, the student will be advised to satisfy the English proficiency requirement before the student can be admitted as a regular student.</p>
+            </div>
+
+            <!-- ================================================
+                 DES APPLICATION
+                 ================================================ -->
+            <div class="des-application">
+                <h3>Application for Environmental Science Program</h3>
+
+                <h4>Submission of the Accomplished Forms to the DES Department Chairperson</h4>
+
+                <h4>Department</h4>
+                <ul>
+                    <li>1 Copy of Application for Admission (DES Form 1)</li>
+                    <li>Recommendation Letter (DES Form 2)
+                        <ul>
+                            <li>2 for MS</li>
+                            <li>3 for PhD</li>
+                        </ul>
+                    </li>
+                    <li>Transcript of Records (Original or Photocopy)</li>
+                    <li>Honorable Dismissal <em>(For non MSU-IIT applicants)</em></li>
+                    <li>Transfer Credentials (Original and Photocopy)</li>
+                    <li>Comprehensive Research Plan
+                        <ul>
+                            <li>Format: single-spaced; A4 size; 5–7 pages</li>
+                            <li>Content: Introduction; Background of the Study; Significance; Review of Related Literature; Materials and Methods; Gantt Chart</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Institute</h4>
+                <ul>
+                    <li>1 Copy of Transcript of Records</li>
+                    <li>1 Copy of PSA Birth Certificate</li>
+                    <li>1 Copy of Good Moral Certificate</li>
+                    <li>1 Copy of Honorable Dismissal/Transfer Credentials <em>(For non-MSU-IIT students)</em></li>
+                    <li>1 Certification – Graduated from the Program with GWA or General Weight Average from the School Registrar</li>
+                    <li>2x2 Photo (1)</li>
+                </ul>
+
+                <div class="note">
+                    <strong>NOTE: (For Environmental Science only)</strong>
+                    <p>If the application is approved, the applicant can submit a deferment form if they will abstain from enrolling in the following semester. Download the form here. Do not forget to make a copy first.</p>
+                </div>
+            </div>
+
+            <!-- ================================================
+                 ENROLLMENT OF SUBJECTS
+                 ================================================ -->
+            <div class="subject-enrollment">
+                <h3>Enrollment of Subjects</h3>
+
+                <div class="process-table">
+
+                    <div class="process-row">
+                        <div class="process-label">Schedule</div>
+                        <div class="process-content">
+                            <p>Enrollment period as specified in the <a href="https://www.msuiit.edu.ph/offices/registrar/academic-calendar.php" target="_blank" rel="noopener noreferrer">[website]</a></p>
+                        </div>
+                    </div>
+
+                    <div class="process-row">
+                        <div class="process-label">Location</div>
+                        <div class="process-content">
+                            <p>School of Interdisciplinary Studies Office, Formerly English Department, Old CASS Building, MSU-IIT</p>
+                        </div>
+                    </div>
+
+                    <div class="process-row">
+                        <div class="process-label">Requirements</div>
+                        <div class="process-content">
+                            <ul>
+                                <li>ID Number <em>(from process 2 above)</em></li>
+                                <li>Cleared of any Liabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-row">
+                        <div class="process-label">Expected Actions</div>
+                        <div class="process-content">
+                            <ul>
+                                <li>Subjects are enlisted according to the <a href="{% url 'programssds' %}" rel="noopener noreferrer">schedule of programs</a></li>
+                                <li>Payment of tuition <em>(if not a scholar)</em></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-row">
+                        <div class="process-label">Expected Result</div>
+                        <div class="process-content">
+                            <ul>
+                                <li>Certificate of Registration (COR) <em>(printed)</em></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================================================
+                 TUITION AND FEES
+                 ================================================ -->
+            <div class="tuition">
+                <h3>Tuition and Fees</h3>
+
+                <h4>Tuition</h4>
+                <ul>
+                    <li>Php 1,500.00/unit</li>
+                </ul>
+
+                <h4>Miscellaneous</h4>
+                <ul>
+                    <li>~Php 1,500.00 (semestral) <em>estimate only</em></li>
+                </ul>
+
+                <h4>Special Project</h4>
+                <ul>
+                    <li>Adviser's Fee: Php 4,000.00</li>
+                    <li>Panel Member Fee: Php 1,500.00 <em>(per panelist)</em></li>
+                </ul>
+
+                <h4>Master's Thesis</h4>
+                <h5>Proposal</h5>
+                <ul>
+                    <li>Adviser's Fee: Php 2,000.00</li>
+                    <li>Panel Member Fee: Php 1,500.00 <em>(per panelist)</em></li>
+                </ul>
+                <h5>Final Defense</h5>
+                <ul>
+                    <li>Adviser's Fee: Php 5,000.00</li>
+                    <li>Panel Member Fee: Php 1,500.00 <em>(per panelist)</em></li>
+                </ul>
+
+                <h4>Doctoral Dissertation</h4>
+                <h5>Proposal</h5>
+                <ul>
+                    <li>Adviser's Fee: Php 3,000.00</li>
+                    <li>Panel Member Fee: Php 1,500.00 <em>(per panelist)</em></li>
+                </ul>
+                <h5>Final Defense</h5>
+                <ul>
+                    <li>Adviser's Fee: Php 6,000.00</li>
+                    <li>Panel Member Fee: Php 2,000.00 <em>(per panelist)</em></li>
+                </ul>
+
+                <h4>Non-enrollment Fees</h4>
+                <ul>
+                    <li>Admission: Php 100.00</li>
+                    <li>Comprehensive Exam: Php 1,500.00</li>
+                </ul>
+                <h5>Proposal Hearing</h5>
+                <ul>
+                    <li>Adviser: Php 2,000.00</li>
+                    <li>Panel Member: Php 1,000.00 <em>(per member)</em></li>
+                </ul>
+                <h5>Final Defense</h5>
+                <ul>
+                    <li>Adviser: Php 5,000.00</li>
+                    <li>Panel Member: Php 1,500.00 <em>(per member)</em></li>
+                </ul>
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/admission.js' %}"></script>
+{% endblock %}

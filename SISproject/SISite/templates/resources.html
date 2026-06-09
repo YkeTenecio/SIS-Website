@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/resources.css' %}">
+{% endblock %}
+
+{% with active_section='resources' %}
+
+{% block content %}
+<section class="resources-page">
+    <h1>Resources</h1>
+    <div class="resources-layout">
+
+        <article class="resources-content content-area">
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>This page serves as a centralized repository of academic and administrative resources for graduate students under the School of Interdisciplinary Studies (SIS). It provides essential documents and forms that support students throughout their graduate studies, from admission and enrollment to thesis or dissertation completion.</p>
+                <p>The resources include graduate handbooks, thesis and research guidelines, academic calendars, and institutional policies that guide academic conduct and research practices. In addition, the page offers access to admission-related documents, proposal and defense forms, and registrar-required forms such as leave of absence, academic load revisions, and completion of academic requirements.</p>
+                <p>Ethics-related documentation is also made available to ensure that interdisciplinary research adheres to institutional and ethical standards. Collectively, these resources are intended to streamline administrative processes, promote academic integrity, and support graduate students in successfully completing their interdisciplinary research and degree requirements.</p>
+            </div>
+
+            {% for category, items in grouped_resources.items %}
+            <h2>{{ category }}</h2>
+            <ul>
+                {% for item in items %}
+                <li>
+                    <a href="{{ item.links }}" target="_blank" rel="noopener noreferrer">
+                        {{ item.resource }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/resources.js' %}"></script>
+{% endblock %}

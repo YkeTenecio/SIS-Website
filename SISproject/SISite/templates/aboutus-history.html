@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% with active_section='about' active_page='about-history' %}
+
+{% block content %}
+<section class="about-page">
+    <h1>About the School of Interdisciplinary Studies</h1>
+    <div class="about-layout sidebar-layout">
+
+        {% include 'partials/about_sidebar.html' %}
+
+        <article class="about-content content-area">
+            <h2>Brief History</h2>
+            <p>The School of Interdisciplinary Studies (SIS) at MSU-IIT grew out of earlier efforts to offer multidisciplinary education under the Sustainable Development Studies program housed in the School of Graduate Studies, which addressed global challenges through diverse perspectives.</p>
+            <p>In 2021, the university created the Center for Multidisciplinary Studies to support Sustainable Development Studies and the Master in Data Science, marking a more structured approach to integrated learning.</p>
+            <p>As complex issues demanded deeper integration, this center was later transformed into the School of Interdisciplinary Studies, signaling a shift from multidisciplinary (parallel disciplines) to truly interdisciplinary education aimed at synthesizing knowledge and tackling 21st-century problems more holistically.</p>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

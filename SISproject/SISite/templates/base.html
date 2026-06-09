@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}SIS MSU-IIT{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <style>
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("{% static 'images/background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -1;
+        }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+
+    <header>
+        <div class="admission">
+            <h4><a href="{% url 'admission' %}">Admission/Application</a></h4>
+            <h4><a href="{% url 'faqs' %}">FAQs</a></h4>
+        </div>
+        <div class="top-banner">
+            <a href="{% url 'home' %}">MSU - Iligan Institute of Technology<br>
+                <span>School of Interdisciplinary Studies</span>
+            </a>
+        </div>
+
+    </header>
+
+    {% include 'partials/nav.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© MSU-Iligan Institute of Technology</p>
+    </footer>
+
+    <script src="{% static 'js/nav.js' %}"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

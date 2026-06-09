@@ -1,0 +1,49 @@
+/* ============================================================
+   RESEARCH.CSS — research.html, research-agendas.html
+   ============================================================ */
+
+.research-page > h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.research-content {
+  min-width: 0;
+}
+
+.research-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-mid);
+  margin-bottom: 0.75rem;
+}
+
+.research-content .overview p {
+  font-weight: 300;
+  line-height: 1.75;
+  text-indent: 1.75rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* ---- Agendas list ---- */
+.research-content .overview ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.research-content .overview ul li {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.research-content .overview ul li strong {
+  font-weight: 600;
+  color: var(--color-primary);
+}

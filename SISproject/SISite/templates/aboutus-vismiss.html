@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% with active_section='about' active_page='about-vismiss' %}
+
+{% block content %}
+<section class="about-page">
+    <h1>About the School of Interdisciplinary Studies</h1>
+    <div class="about-layout sidebar-layout">
+
+        {% include 'partials/about_sidebar.html' %}
+
+        <article class="about-content content-area">
+            <h2>Vision</h2>
+            <p>A research university committed to the holistic development of the individual and society.</p>
+
+            <h2>Mission</h2>
+            <p>To provide quality education for the sustainable development of the nation and the global community.</p>
+
+            <h2>Our Core Values</h2>
+            <p>To realize our vision and mission, we dedicate ourselves to the following code of conduct:</p>
+
+            <h3>Honor and Excellence</h3>
+            <p>We are conscientious, and we take pride in the amount of care, skill, and heart we put into our work to produce excellent outcomes—ones that add value to the people and places around us.</p>
+            <p>We uphold high standards of performance in all the things that we do because we are passionate about making the world a better place. We believe in giving ourselves fully to all our undertakings because the world deserves no less.</p>
+            <p>We strive to realize our full potential and make meaningful contributions to humanity. We value integrity and strive to stand up for what is morally right. We make sure we fulfill commitments as a gesture of respect.</p>
+
+            <h3>Service and Compassion</h3>
+            <p>We have faith in our shared humanity. We recognize that in a world of volatility, uncertainty, complexity, and ambiguity, we need to be people for others.</p>
+            <p>We open ourselves to a world of needs and endeavor to become conduits of inclusivity and equity in access to services and opportunities.</p>
+
+            <h3>Resilience and Innovation</h3>
+            <p>We have the grit to overcome obstacles and challenges in our pursuit of relevance and excellence. We expose ourselves to new experiences and knowledge and believe there are no limitations to the mind.</p>
+            <p>We value curiosity and embrace generous inquiry. We constantly ask questions and challenge mental models to create new and innovative ideas.</p>
+            <p>We embrace the diversity of expertise and break boundaries between fields, ensuring that our pursuit of knowledge is grounded in the issues facing our communities.</p>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

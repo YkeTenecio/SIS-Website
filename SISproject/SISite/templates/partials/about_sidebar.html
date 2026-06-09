@@ -1,0 +1,16 @@
+<aside class="sidebar">
+    <ul>
+        <li {% if active_page == 'about-overview' %}class="active"{% endif %}>
+            <a href="{% url 'about-overview' %}">Overview</a>
+        </li>
+        <li {% if active_page == 'about-history' %}class="active"{% endif %}>
+            <a href="{% url 'about-history' %}">Brief History</a>
+        </li>
+        <li {% if active_page == 'about-vismiss' %}class="active"{% endif %}>
+            <a href="{% url 'about-vismiss' %}">Vision & Mission</a>
+        </li>
+        <li {% if active_page == 'about-dean' %}class="active"{% endif %}>
+            <a href="{% url 'about-dean' %}">Office of the Dean</a>
+        </li>
+    </ul>
+</aside>

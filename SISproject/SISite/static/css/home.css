@@ -1,0 +1,169 @@
+/* ============================================================
+   HOME.CSS — home.html
+   ============================================================ */
+
+/* ---- BACKGROUND IMAGE ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("{% static 'images/background.jpg' %}");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
+body {
+  position: relative;
+}
+
+/* Section headings */
+main section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* ---- NEWS ---- */
+.news {
+  background-color: #666;
+  color: var(--color-white);
+  padding: 2rem var(--page-padding);
+}
+
+.news-feeds {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.news-feeds .fb-page {
+    flex: 1 1 240px;    /* slightly smaller min-width to fit 4 across */
+    max-width: 340px;
+}
+
+/* ---- EVENTS ---- */
+.events,
+.announcements {
+  padding: 2rem 0;
+}
+
+.event,
+.announcement {
+  background: var(--color-light-bg);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.event h3,
+.announcement h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.event p,
+.announcement p {
+  font-size: 0.95rem;
+  text-indent: 0;
+  text-align: left;
+  margin: 0;
+}
+
+.event small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-mid);
+}
+
+/* ---- PROGRAMS ---- */
+.programs {
+  padding: 2rem 0;
+}
+
+.program {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-light-bg);
+  cursor: pointer;
+}
+
+.program:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.program img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.program h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-mid);
+  margin-bottom: 0.5rem;
+}
+
+.program p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  text-indent: 0;
+  text-align: left;
+  color: var(--color-text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .program {
+    grid-template-columns: 1fr;
+  }
+
+  .program img {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/* ---- ADMISSION BUTTON ---- */
+.admission {
+  position: absolute;
+  top: 1rem;
+  right: var(--page-padding);
+  z-index: 10;
+  display: flex;        /* ← add this */
+  gap: 0.5rem;          /* ← add this */
+  align-items: center;  /* ← add this */
+}
+
+.admission h4 {
+  margin: 0;
+}
+
+.admission a {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  transition: background var(--transition);
+}
+
+.admission a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}

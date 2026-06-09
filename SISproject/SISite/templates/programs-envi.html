@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='programsenvi' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Department of Environmental Science</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/envi_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="dean-message">
+                <img src="{{ chair.image_url }}" alt="{{ chair.name }}">
+                <div>
+                    <h3>{{ chair.name }}</h3>
+                    <p>Department Chairperson</p>
+                    <a href="mailto:{{ chair.email }}">{{ chair.email }}</a>
+                </div>
+            </div>
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The Department of Environmental Science offers two Master of Science in Environmental Science programs, one specializing in Environmental Planning and Management and another in Environmental Research, and a Doctor of Philosophy in Environmental Science, all structured around core coursework in environmental science, laws and policies, impact assessment, research methodology, and statistics, followed by specialized major subjects and a broad range of electives, with each program totaling about 38 units that include graduate seminars, comprehensive examinations, and the completion and defense of either a master's thesis or a doctoral dissertation with required residency.</p>
+            </div>
+
+            <div class="programs-list">
+                <h2>Programs</h2>
+                <ul>
+                    <li><a href="{% url 'enviepm' %}">Master of Science in Environmental Science Major in Environmental Planning and Management</a></li>
+                    <li><a href="{% url 'envier' %}">Master of Science in Environmental Science Major in Environmental Research</a></li>
+                    <li><a href="{% url 'enviphd' %}">Doctor of Philosophy in Environmental Science</a></li>
+                </ul>
+            </div>
+
+            <div class = "Scholarships">
+                <h2>Scholarships</h2>
+                <ul>
+                    <li>DOST - ASTHRDP</li>
+                    <li>CHED - SIKAP</li>
+                </ul>
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

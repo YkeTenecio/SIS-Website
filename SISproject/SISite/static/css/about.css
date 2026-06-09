@@ -1,0 +1,38 @@
+/* ============================================================
+   ABOUT.CSS — aboutus-overview, history, vismiss, dean
+   ============================================================ */
+
+.about-page,
+.office-of-dean {
+  /* layout handled by sidebar-layout in base */
+}
+
+/* Page section title above layout */
+.about-page > h1,
+.office-of-dean > h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* About content area */
+.about-content,
+.office-content {
+  min-width: 0; /* prevents grid blowout */
+}
+
+/* ---- VISION & MISSION specific ---- */
+.about-content h2 {
+  color: var(--color-primary);
+}
+
+.about-content h3 {
+  color: var(--color-mid);
+  font-weight: 600;
+}
+
+/* ---- OFFICE OF THE DEAN ---- */
+.office-profile {
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,35 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+# Django database
+*.sqlite3
+
+# Media (user uploads)
+media/
+
+# Static files (optional; keep if you build elsewhere)
+# staticfiles/
+
+# Environment variables
+.env
+.env.*
+
+# Virtual environments
+venv/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Django migrations cache (usually not needed to ignore, but safe)
+# local migration squashes
+**/migrations/__pycache__/
+

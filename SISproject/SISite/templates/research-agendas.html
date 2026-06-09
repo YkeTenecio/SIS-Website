@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/research.css' %}">
+{% endblock %}
+
+{% with active_section='research' active_page='agendas' %}
+
+{% block content %}
+<section class="research-page">
+    <h1>Research Agendas &amp; Priorities</h1>
+    <div class="research-layout sidebar-layout">
+
+        {% include 'partials/research_sidebar.html' %}
+
+        <article class="research-content content-area">
+            <div class="overview">
+                <h2>Research Agendas &amp; Priorities</h2>
+                <p>As a publicly-funded university, one of the mandates of MSU-IIT is to contribute to the national and societal goals through the conduct of interdisciplinary, multidisciplinary, collaborative, and/or independent studies.</p>
+                <p>The University's Research Agenda are encapsulated in the following broad categories:</p>
+
+                <ul>
+                    <li><strong>ICT:</strong> Software development for various applications; integration of ICT in teaching; on-line learning systems.</li>
+                    <li><strong>Biotechnology:</strong> Drug and nutraceutical discovery and development; application of bioinformatics; bioremediation; industrial enzymes; biosafety and ethical implications of biotechnology.</li>
+                    <li><strong>Material Science:</strong> Engineered bamboo; nanotechnology applications of biomaterials; solid waste recycling; biopolymers.</li>
+                    <li><strong>Health and Environment:</strong> Cancer surveillance; dengue transmission and control; climate change and health; food nutritive value fortification and safety; ethnobotany and biodiversity.</li>
+                    <li><strong>Renewable Energy:</strong> Bioenergy production; non-conventional power generation; biodegradation systems for energy production.</li>
+                    <li><strong>Peace and Governance:</strong> Governance issues in health and environmental management; contextualization of science and technology for the promotion of peace.</li>
+                    <li><strong>Gender and Development:</strong> Gender equality; GAD sensitivity and awareness; gender empowerment.</li>
+                    <li><strong>Disaster Risk Reduction and Management:</strong> Disaster geo-informatics; robotics for disaster; hazard assessment.</li>
+                    <li><strong>Curricular Innovations and Emerging Pedagogies:</strong> Researches that promote inclusive, transformative, innovative and equitable quality education.</li>
+                    <li><strong>Economics and Business Education:</strong> Business intelligence, enterprise development, livelihood and employment.</li>
+                </ul>
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/research.js' %}"></script>
+{% endblock %}

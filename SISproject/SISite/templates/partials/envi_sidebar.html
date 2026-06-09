@@ -1,0 +1,17 @@
+<aside class="sidebar">
+    <h3>Programs</h3>
+    <ul>
+        <li {% if active_page == 'programsenvi' %}class="active"{% endif %}>
+            <a href="{% url 'programsenvi' %}">Overview</a>
+        </li>
+        <li {% if active_page == 'enviepm' %}class="active"{% endif %}>
+            <a href="{% url 'enviepm' %}">MSES EPM</a>
+        </li>
+        <li {% if active_page == 'envier' %}class="active"{% endif %}>
+            <a href="{% url 'envier' %}">MSES ER</a>
+        </li>
+        <li {% if active_page == 'enviphd' %}class="active"{% endif %}>
+            <a href="{% url 'enviphd' %}">PhD ES</a>
+        </li>
+    </ul>
+</aside>

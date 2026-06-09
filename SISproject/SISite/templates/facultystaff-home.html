@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/facultystaff.css' %}">
+{% endblock %}
+
+{% with active_section='faculty' active_page='facultyhome' %}
+
+{% block content %}
+<section class="facultystaff-page">
+    <h1>Faculty &amp; Staff</h1>
+    <div class="facultystaff-layout sidebar-layout">
+
+        {% include 'partials/faculty_sidebar.html' %}
+
+        <article class="facultystaff-content content-area">
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The School of Interdisciplinary Studies (SIS) faculty comprises highly competent multidisciplinary experts drawn exclusively from various MSU-IIT departments, delivering specialized instruction in Sustainable Development Studies, Data Science, and Environmental Science.</p>
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/facultystaff.js' %}"></script>
+{% endblock %}

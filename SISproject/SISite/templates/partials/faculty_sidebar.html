@@ -1,0 +1,17 @@
+<aside class="sidebar">
+    <h3>Faculty &amp; Staff</h3>
+    <ul>
+        <li {% if active_page == 'facultyhome' %}class="active"{% endif %}>
+            <a href="{% url 'facultyhome' %}">Overview</a>
+        </li>
+        <li {% if active_page == 'faculty' %}class="active"{% endif %}>
+            <a href="{% url 'faculty' %}">Faculty</a>
+        </li>
+        <li {% if active_page == 'affil' %}class="active"{% endif %}>
+            <a href="{% url 'affil' %}">Faculty Affiliates</a>
+        </li>
+        <li {% if active_page == 'staff' %}class="active"{% endif %}>
+            <a href="{% url 'staff' %}">Staff</a>
+        </li>
+    </ul>
+</aside>

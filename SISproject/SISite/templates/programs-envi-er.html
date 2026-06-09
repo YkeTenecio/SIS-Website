@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='envier' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Master of Science in Environmental Science Major in Environmental Research</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/envi_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The Master of Science in Environmental Science major in Environmental Research develops advanced skills in designing, conducting, and analyzing scientific investigations on environmental issues, integrating both biophysical and policy dimensions. The program builds on foundation courses in environmental science, environmental laws and policies, impact assessment, research methodology, statistics, and a graduate seminar, then deepens into specialized subjects on analytical techniques, experimental design and data analysis, and environmental evaluation and monitoring. Students complete a thesis and comprehensive examination demonstrating their ability to carry out rigorous, independent environmental research.</p>
+            </div>
+
+            <div class="programs-list">
+                {% include 'partials/curriculum_semesters.html' %}
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIS - MSU-IIT</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <style>
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("{% static 'images/background.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>    
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0">
+    </script>
+
+    <header>
+        <div class="admission">
+            <h4><a href="{% url 'admission' %}">Admission/Application</a></h4>
+            <h4><a href="{% url 'faqs' %}">FAQs</a></h4>
+        </div>
+        <div class="top-banner">
+            <a href="https://www.msuiit.edu.ph" rel="noopener noreferrer">
+                MSU - Iligan Institute of Technology<br>
+                <span>School of Interdisciplinary Studies</span>
+            </a>
+        </div>
+    </header>
+    
+
+    {% include 'partials/nav.html' %}
+
+    <main>
+        <section class="news">
+            <div class="news-feeds">
+                <div class="fb-page"
+                    data-href="https://www.facebook.com/profile.php?id=61578233857380"
+                    data-tabs="timeline"
+                    data-width="300"
+                    data-height="600"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="false">
+                </div>
+                <div class="fb-page"
+                    data-href="https://www.facebook.com/environmentalscienceofmsuiit"
+                    data-tabs="timeline"
+                    data-width="300"
+                    data-height="600"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="false">
+                </div>
+                <div class="fb-page"
+                    data-href="https://www.facebook.com/profile.php?id=61580007180089"
+                    data-tabs="timeline"
+                    data-width="300"
+                    data-height="600"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="false">
+                </div>
+                <div class="fb-page"
+                    data-href="https://www.facebook.com/profile.php?id=61561916378374L"
+                    data-tabs="timeline"
+                    data-width="300"
+                    data-height="600"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="false">
+                </div>
+            </div>
+        </section>
+
+        <section class="events">
+            <h2>Events</h2>
+            {% for event in events %}
+            <article class="event">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.description }}</p>
+                <small>{{ event.event_date }}</small>
+            </article>
+            {% empty %}
+            <p>No events available.</p>
+            {% endfor %}
+        </section>
+
+        <section class="announcements">
+            <h2>Announcements</h2>
+            {% for announcement in announcements %}
+            <article class="announcement">
+                <h3>{{ announcement.title }}</h3>
+                <p>{{ announcement.content }}</p>
+            </article>
+            {% empty %}
+            <p>No announcements.</p>
+            {% endfor %}
+        </section>
+
+        <section class="programs">
+            <h2>Our Programs</h2>
+
+            <article class="program">
+                <img src="{% static 'images/SDS.png' %}" alt="Sustainable Development Studies">
+                <div>
+                    <h3><a href="{% url 'programssds' %}">Sustainable Development Studies</a></h3>
+                    <p>Focuses on eco-friendly growth strategies balancing economic progress, environmental preservation, and social justice.</p>
+                </div>
+            </article>
+
+            <article class="program">
+                <img src="{% static 'images/DES.png' %}" alt="Environmental Science">
+                <div>
+                    <h3><a href="{% url 'programsenvi' %}">Department of Environmental Science</a></h3>
+                    <p>Interdisciplinary field combining biology, physics, and information sciences to study ecosystems and solve environmental challenges.</p>
+                </div>
+            </article>
+
+            <article class="program">
+                <img src="{% static 'images/MDS.png' %}" alt="Data Science">
+                <div>
+                    <h3><a href="{% url 'programsds' %}">Data Science Program</a></h3>
+                    <p>Blends statistics, computer science, and domain knowledge to extract insights from data.</p>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© MSU-Iligan Institute of Technology</p>
+    </footer>
+
+    <script src="{% static 'js/nav.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+
+</body>
+</html>

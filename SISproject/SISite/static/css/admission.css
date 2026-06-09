@@ -1,0 +1,258 @@
+/* ============================================================
+   ADMISSION.CSS — admission.html
+   ============================================================ */
+
+/* ---- Page title ---- */
+.admission-page > h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.admission-content {
+  min-width: 0;
+}
+
+/* ============================================================
+   SHARED SECTION STRUCTURE
+   h3 = major section heading (with gray bar, like affil-section h3)
+   h4 = sub-label / step heading (with left accent, like year-sem h3/h4)
+   h5 = sub-sub heading (e.g. Proposal / Final Defense under a thesis type)
+   ============================================================ */
+
+.admission-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-light-bg);
+}
+
+.admission-content h3:first-child {
+  margin-top: 0;
+}
+
+.admission-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-mid);
+  background: #f5f5f5;
+  padding: 0.4rem 0.75rem;
+  border-left: 3px solid var(--color-primary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.admission-content h5 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--color-mid);
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--color-light-bg);
+}
+
+/* ---- Paragraphs ---- */
+.admission-content p {
+  font-weight: 300;
+  line-height: 1.75;
+  text-indent: 1.75rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Reset indent for paragraphs inside process rows (no indent needed) */
+.admission-content .process-content p {
+  text-indent: 0;
+  margin-bottom: 0;
+}
+
+/* ---- Lists ---- */
+.admission-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.admission-content ul ul {
+  list-style: circle;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.admission-content ul li {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 0.35rem;
+  color: var(--color-text);
+}
+
+.admission-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.admission-content ol li {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  color: var(--color-text);
+}
+
+/* ---- Links ---- */
+.admission-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.admission-content a:hover {
+  opacity: 0.8;
+}
+
+/* ---- Italic / note labels ---- */
+.admission-content i {
+  color: var(--color-mid);
+  font-size: 0.9em;
+}
+
+/* ---- NOTE block (bold label + paragraph) ---- */
+.admission-content .note {
+  background: #fdf0f0;
+  border-left: 3px solid var(--color-primary);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.admission-content .note strong {
+  display: block;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.admission-content .note p {
+  text-indent: 0;
+  margin-bottom: 0;
+}
+
+/* ---- Address list (courier address) — no bullets ---- */
+.admission-content .address-list {
+  list-style: none;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-light-bg);
+  margin-bottom: 1rem;
+}
+
+.admission-content .address-list li {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   SECTION DIVIDERS — give each major div breathing room
+   ============================================================ */
+.admission-content .minimum-requirement,
+.admission-content .sds-application,
+.admission-content .des-application,
+.admission-content .subject-enrollment,
+.admission-content .tuition {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-light-bg);
+}
+
+.admission-content .tuition {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   SUBJECT ENROLLMENT — process table layout (2-column)
+   mirrors the screenshot: label left, content right
+   ============================================================ */
+.subject-enrollment .process-table {
+  margin-top: 1rem;
+}
+
+.subject-enrollment .process-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-light-bg);
+  align-items: start;
+}
+
+.subject-enrollment .process-row:last-child {
+  border-bottom: none;
+}
+
+.subject-enrollment .process-label {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  padding-top: 0.1rem;
+}
+
+.subject-enrollment .process-content p {
+  font-weight: 300;
+  line-height: 1.75;
+  margin: 0;
+  text-indent: 0;
+}
+
+.subject-enrollment .process-content ul {
+  margin-bottom: 0;
+}
+
+/* Override h3/h4 inside subject-enrollment to not double-add margin */
+.subject-enrollment h3 {
+  background: var(--color-light-bg);
+  padding: 0.6rem 1rem;
+  border-bottom: none;
+  margin-top: 0;
+}
+
+/* ============================================================
+   TUITION TABLE — fee breakdown
+   ============================================================ */
+.tuition .fee-group {
+  margin-bottom: 1.5rem;
+}
+
+.tuition .fee-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .subject-enrollment .process-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .subject-enrollment .process-label {
+    color: var(--color-primary);
+    border-bottom: 1px dashed var(--color-light-bg);
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+}

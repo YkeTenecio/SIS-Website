@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='programssds' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Sustainable Development Studies Program</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/sds_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="dean-message">
+                <img src="{{ chair.image_url }}" alt="{{ chair.name }}">
+                <div>
+                    <h3>{{ chair.name }}, {{chair.title}}</h3>
+                    <p>Department Chairperson</p>
+                    <a href="mailto:{{ chair.email }}">{{ chair.email }}</a>
+                </div>
+            </div>
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>Sustainable Development Studies (SDS) at MSU-IIT began in April 2003 when DENR-MGB Region 10 proposed a partnership with MSU-IIT to create a graduate curriculum addressing Mindanao's multi-faceted environmental challenges. A workshop followed in May 2003, curriculum crafting in January 2004, and formal approval via BOR Resolution No. 07, S. 2004 in July 2004. The program launched in Summer 2004 off-campus at DENR-MGB 10 with 12 students, taught by faculty from MSU-IIT, DENR, DA, DTI, NEDA, and industries.</p>
+                <p>The Doctor in Sustainable Development gained approval through BOR Resolution No. 47, S. 2005, establishing multidisciplinary, ladderized programs focused on sustainable solutions, resource management, community development, and economic planning. Strategic reviews in 2005, 2008, and 2009 refined objectives, curricula, and plans for expansion, research, extension, and linkages.</p>
+            </div>
+
+            <div class="programs-list">
+                <h2>Programs</h2>
+                <ul>
+                    <li><a href = "{% url 'msds' %}">Master in Sustainable Development Studies</a></li>
+                    <li><a href = "{% url 'mssds' %}">Master of Science in Sustainable Development Studies</a></li>
+                    <li><a href = "{% url 'dsdswo' %}">Doctor in Sustainable Development Studies</a></li>
+                    <li><a href = "{% url 'phdsdswo' %}">Doctor of Science in Sustainable Development Studies</a></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

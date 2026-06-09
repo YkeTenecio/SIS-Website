@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/faqs.css' %}">
+{% endblock %}
+
+{% with active_section='faqs' %}
+
+{% block content %}
+<section class="faqs-page">
+    <h1>FAQs</h1>
+    <div class="faqs-layout">
+
+        <article class="faqs-content content-area">
+            <div class="FAQs">
+                <h2>Frequently Asked Questions</h2>
+                <ul>
+                    <h4>Who can Apply?</h4>
+                    <li>Professionals from government, NGOs, academe, and industry are welcome to apply, especially those who want to integrate sustainability into their field.</li>
+
+                    <h4>Can I study while working full-time?</h4>
+                    <li>Yes. The program is designed for professionals with a hybrid setup and flexible scheduling.</li>
+
+                    <h4>How much is the tuition fee?</h4>
+                    <li>The tuition fee is ₱1,500.00 per unit.</li>
+
+                    <h4>How long does it take to complete the program?</h4>
+                    <li>Master’s Degree: 2 to 3 years</li>
+                    <li>Doctorate Degree: 3 to 5 years</li>
+
+                    <h4>What is the difference between the Academic Track and the Professional Track?</h4>
+                    <li>Academic Track: Research-oriented, focusing on knowledge production and scholarly work. Prepares students for careers in research and academe.</li>
+                    <li>Professional Track: Practice-oriented, emphasizing the application of knowledge in real-world settings. Geared toward policy work, development practice, and organizational leadership.</li>
+                    
+                    <h4>How can I submit my documents if I am outside Iligan City?</h4>
+                    <li>You may send your documents via courier (e.g., LBC) addressed to:<li>
+                    <p>Dr. Ernesto E. Empig </p>
+                    <p>SIS Office CASS Old Building, Ground Floor </p>
+                    <p>Mindanao State University-Iligan Institute of Technology </p>
+                    <p>Andres Bonifacio Avenue, Tibanga Iligan City, 9200</p>
+                </ul>
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/faqs.js' %}"></script>
+{% endblock %}

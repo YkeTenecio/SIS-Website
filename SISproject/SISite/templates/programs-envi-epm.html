@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='enviepm' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Master of Science in Environmental Science Major in Environmental Planning and Management</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/envi_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The Master of Science in Environmental Science major in Environmental Planning and Management prepares students to address environmental problems through science-based planning, policy, and participatory management, with emphasis on linking biophysical understanding and governance. The program includes foundation courses in environmental science, environmental laws and policies, impact assessment, research methodology, and statistics, then builds into specialized subjects on environmental planning and management, community-based environmental management, and forest and watershed management. Students choose from a wide range of electives and are required to complete a graduate seminar, comprehensive examination, and a thesis focused on applied environmental planning and management issues.</p>
+            </div>
+
+            <div class="programs-list">
+                {% include 'partials/curriculum_semesters.html' %}
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

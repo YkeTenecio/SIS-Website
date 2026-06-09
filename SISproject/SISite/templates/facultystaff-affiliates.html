@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/facultystaff.css' %}">
+{% endblock %}
+
+{% with active_section='faculty' active_page='affil' %}
+
+{% block content %}
+<section class="facultystaff-page">
+    <h1>Faculty Affiliates</h1>
+    <div class="facultystaff-layout sidebar-layout">
+
+        {% include 'partials/faculty_sidebar.html' %}
+
+        <article class="facultystaff-content content-area">
+            <div class="overview">
+                <h2>Our Affiliates</h2>
+                <p>Our faculty affiliates are experts from partner institutions who contribute to the interdisciplinary education at SIS.</p>
+            </div>
+
+            <div class="faculty-search-bar">
+                <input type="text" id="affiliatesSearch" placeholder="Search by name or department...">
+            </div>
+
+            <!-- SECTIONED VIEW (shown when search is empty) -->
+            <div id="affiliatesSectioned">
+
+                <div class="affil-section">
+                    <h3>Environmental Science</h3>
+                    <div class="images">
+                        {% for affil in affil %}
+                        {% if affil.department == 'ENVISCI' %}
+                        <div class="faculty-card"
+                             data-name="{{ affil.name }}"
+                             data-department="{{ affil.get_department_display|lower }}">
+                            <img src="{{ affil.image_url }}" alt="{{ affil.name }}">
+                            <p>{{ affil.name }}</p>
+                        </div>
+                        {% endif %}
+                        {% empty %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="affil-section">
+                    <h3>Sustainable Development Studies</h3>
+                    <div class="images">
+                        {% for affil in affil %}
+                        {% if affil.department == 'SUSTAINDEV' %}
+                        <div class="faculty-card"
+                             data-name="{{ affil.name }}"
+                             data-department="{{ affil.get_department_display|lower }}">
+                            <img src="{{ affil.image_url }}" alt="{{ affil.name }}">
+                            <p>{{ affil.name }}</p>
+                        </div>
+                        {% endif %}
+                        {% empty %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="affil-section">
+                    <h3>Data Science</h3>
+                    <div class="images">
+                        {% for affil in affil %}
+                        {% if affil.department == 'DATASCI' %}
+                        <div class="faculty-card"
+                             data-name="{{ affil.name }}"
+                             data-department="{{ affil.get_department_display|lower }}">
+                            <img src="{{ affil.image_url }}" alt="{{ affil.name }}">
+                            <p>{{ affil.name }}</p>
+                        </div>
+                        {% endif %}
+                        {% empty %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FLAT SEARCH VIEW (shown when search has text) -->
+            <div id="affiliatesGrid" class="images" style="display: none;">
+                {% for affil in affil %}
+                <div class="faculty-card"
+                     data-name="{{ affil.name }}"
+                     data-department="{{ affil.get_department_display|lower }}">
+                    <img src="{{ affil.image_url }}" alt="{{ affil.name }}">
+                    <p>{{ affil.name }}</p>
+                </div>
+                {% empty %}
+                <p>No Affiliates Found.</p>
+                {% endfor %}
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/facultystaff.js' %}"></script>
+{% endblock %}

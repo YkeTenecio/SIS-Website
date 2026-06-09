@@ -1,0 +1,63 @@
+/* ============================================================
+   STUDENTS.CSS — students.html
+   ============================================================ */
+
+.students-page > h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Overview block */
+.students-content .overview p {
+  font-weight: 300;
+  line-height: 1.75;
+  text-indent: 1.75rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Section headings */
+.students-page > h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-light-bg);
+}
+
+/* Tables */
+.students-table,
+.deanlist-table,
+.org-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.students-table th,
+.deanlist-table th,
+.org-table th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: var(--font-heading);
+}
+
+.students-table td,
+.deanlist-table td,
+.org-table td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--color-light-bg);
+}
+
+.students-table tr:nth-child(even) td,
+.deanlist-table tr:nth-child(even) td,
+.org-table tr:nth-child(even) td {
+  background-color: #fafafa;
+}

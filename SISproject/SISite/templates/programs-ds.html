@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='programsds' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Data Science Program</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/ds_sidebar.html' %}
+
+        <article class="programs-content content-area">
+
+            <div class="dean-message">
+                <img src="{{ chair.image_url }}" alt="{{ chair.name }}">
+                <div>
+                    <h3>{{ chair.name }}</h3>
+                    <p>Department Chairperson</p>
+                    <a href="mailto:{{ chair.email }}">{{ chair.email }}</a>
+                </div>
+            </div>
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The Data Science program at MSU-IIT's School of Interdisciplinary Studies blends statistical analysis, computer science, and domain-specific knowledge to equip students with skills for interpreting large datasets and extracting actionable insights. Delivered as a graduate-level offering, it addresses surging industry demand across healthcare, finance, technology, and sustainability sectors, preparing graduates for roles as data scientists, analysts, and engineers who drive evidence-based innovation and decision-making.</p>
+                <p>The interdisciplinary curriculum integrates computational tools, machine learning, data visualization, and ethical considerations, drawing faculty expertise from MSU-IIT's College of Computer Studies and College of Science and Mathematics to foster real-world applications. Students benefit from flexible delivery modes, cross-disciplinary electives, and research opportunities aligned with SIS priorities in sustainable development and complex problem-solving.</p>
+            </div>
+
+            <div class="programs-list">
+                <h2>Programs</h2>
+                <ul>
+                    <li><a href="{% url 'mds' %}">Data Science Program</a></li>
+                </ul>
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}

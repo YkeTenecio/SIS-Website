@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/programs.css' %}">
+{% endblock %}
+
+{% with active_section='programs' active_page='mds' %}
+
+{% block content %}
+<section class="programs-page">
+    <h1>Master in Data Science</h1>
+    <div class="programs-layout sidebar-layout">
+
+        {% include 'partials/ds_sidebar.html' %}
+
+        <article class="programs-content content-area">
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>The Master of Data Science program is designed to provide students with a structured and comprehensive learning journey over two academic years. It combines foundational knowledge, practical skills, and advanced concepts in a progressive manner, ensuring that students develop the expertise needed to excel in the rapidly evolving field of data science. The curriculum includes a balanced mix of coursework, assessments, and a culminating capstone project that integrates theoretical understanding with real-world application.</p>
+            </div>
+
+            <div class="programs-list">
+                <h2>Curriculum</h2>
+                {% with download_url="https://docs.google.com/document/d/1gQMPAq9qZMuwRrcw9j9ec82DQ_AO_ZSU/edit?usp=sharing&ouid=104430264662102753362&rtpof=true&sd=true" %}
+                {% include 'partials/curriculum_semesters.html' %}
+                {% endwith %}
+            </div>
+
+        </article>
+    </div>
+</section>
+{% endblock %}
+
+{% endwith %}
+
+{% block scripts %}
+<script src="{% static 'js/programs.js' %}"></script>
+{% endblock %}
